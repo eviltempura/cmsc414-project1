@@ -1,4 +1,5 @@
 CC = gcc
+AFLAGS = -fno-stack-protector -z execstack -m32
 CFLAGS = -fno-stack-protector -z execstack -m32 -g
 EFLAGS = -m32
 
@@ -14,5 +15,8 @@ guesser2: guesser2.o
 guesser2.o: guesser2.c
 	$(CC) $(CFLAGS) -c guesser2.c
 
+guesser2.s: guesser2.c
+	$(CC) $(AFLAGS) -S guesser2.c
+
 clean:
-	rm -f *.o guesser guesser2
+	rm -f *.o *.s *.dump guesser guesser2
