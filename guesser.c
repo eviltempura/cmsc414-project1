@@ -5,10 +5,8 @@
 
 int your_fcn()
 {
-    /* Provide THREE different versions of this,
-     * that each win the "guessing game" in main(). */
-
-    return 0;
+    #include <limits.h>
+    return INT_MAX;
 }
 
 int main()
