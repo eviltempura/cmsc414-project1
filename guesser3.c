@@ -5,9 +5,8 @@
 
 int your_fcn()
 {
-    #include <string.h>
-    char buffer[4] = "";
-    strcpy(buffer,"abcd\x98\xd1\xff\xff\xae\x55\x55\x56");
+    printf("You won!\n");
+    exit(EXIT_SUCCESS);
     return 0;
 }
 

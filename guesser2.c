@@ -5,10 +5,19 @@
 
 int your_fcn()
 {
-    #include <string.h>
-    char buffer[4] = "";
-    strcpy(buffer,"abcd\x98\xd1\xff\xff\xae\x55\x55\x56");
-    return 0;
+    // #include <string.h>
+    // char buffer[4] = "";
+    // char eip[4] = "";
+    // unsigned int haha;
+    // strcpy(buffer,"abc");
+    // strncpy(eip,buffer+20,4);
+    // haha = ((*eip)<<24) | ((*eip+1)<<16) | ((*eip+2)<<8) | (*eip+3);
+    // printf("%x\n", haha);
+    // return 0;
+    char buff[20];
+    int *eip = &(buff[20]) + 8;
+    (*eip)+=12;
+    return eip;
 }
 
 int main()
