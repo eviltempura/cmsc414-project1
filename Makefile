@@ -44,7 +44,7 @@ exploit1: exploit1.o
 	$(CC) $(CFLAGS) -c exploit1.c
 
 exploit1.o: exploit1.c
-	$(CC) $(EFLAGS) -o exploit1 exploit1.o
+	$(CC) $(EFLAGS) -o exploit1 exploit1.c
 
 clean:
-	rm -f *.o *.dump guesser guesser2 guesser3 vuln1
+	rm -f *.o *.dump guesser guesser2 guesser3 vuln1 badfile exploit1
