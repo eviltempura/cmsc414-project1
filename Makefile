@@ -6,14 +6,14 @@ CFLAGS = -fno-stack-protector -z execstack -m32 -g
 DFLAGS = -S --disassemble
 EFLAGS = -m32
 
-guesser.dump: guesser
-	$(DUMP) $(DFLAGS) guesser > guesser.dump
+guesser1.dump: guesser1
+	$(DUMP) $(DFLAGS) guesser1 > guesser1.dump
 
-guesser: guesser.o
-	$(CC) $(EFLAGS) -o guesser guesser.o
+guesser1: guesser1.o
+	$(CC) $(EFLAGS) -o guesser1 guesser1.o
 
-guesser.o: guesser.c
-	$(CC) $(CFLAGS) -c guesser.c
+guesser1.o: guesser1.c
+	$(CC) $(CFLAGS) -c guesser1.c
 
 guesser2.dump: guesser2
 	$(DUMP) $(DFLAGS) guesser2 > guesser2.dump
