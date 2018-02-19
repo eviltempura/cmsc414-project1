@@ -14,10 +14,10 @@ int your_fcn()
     // haha = ((*eip)<<24) | ((*eip+1)<<16) | ((*eip+2)<<8) | (*eip+3);
     // printf("%x\n", haha);
     // return 0;
-    char buff[20];
-    int *eip = &(buff[20]) + 8;
+    char buff[4];
+    int *eip = &(buff[4]) + 8;
     (*eip)+=12;
-    return eip;
+    return 233;
 }
 
 int main()
