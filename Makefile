@@ -41,10 +41,20 @@ exploit1.dump: exploit1
 	$(DUMP) $(DFLAGS) exploit1 > exploit1.dump
 
 exploit1: exploit1.o
-	$(CC) $(CFLAGS) -c exploit1.c
+	$(CC) $(EFLAGS) -o exploit1 exploit1.o
 
 exploit1.o: exploit1.c
-	$(CC) $(EFLAGS) -o exploit1 exploit1.c
+	$(CC) $(CFLAGS) -c exploit1.c
+
+vuln2: vulnerable2.c
+	$(SUDO) $(CC) $(CFLAGS) vulnerable2.c -o vuln2
+	$(SUDO) chmod 4755 vuln2
+
+exploit2: exploit2.o
+	$(CC) $(EFLAGS) -o exploit2 exploit2.o
+
+exploit2.o: exploit2.c
+	$(CC) $(CFLAGS) -c exploit2.c
 
 clean:
-	rm -f *.o *.dump guesser1 guesser2 guesser3 vuln1 badfile exploit1
+	rm -f *.o *.dump guesser1 guesser2 guesser3 vuln1 badfile exploit1 exploit2 vuln2
