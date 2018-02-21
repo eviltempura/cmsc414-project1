@@ -56,5 +56,8 @@ exploit2: exploit2.o
 exploit2.o: exploit2.c
 	$(CC) $(CFLAGS) -c exploit2.c
 
+substring: ./task3/substring.c
+	$(CC) $(EFLAGS) -o ./task3/substring ./task3/substring.c
+
 clean:
-	rm -f *.o *.dump guesser1 guesser2 guesser3 vuln1 badfile exploit1 exploit2 vuln2
+	rm -f *.o *.dump guesser1 guesser2 guesser3 vuln1 badfile exploit1 exploit2 vuln2 ./task3/substring ./task3/output.txt output.txt
