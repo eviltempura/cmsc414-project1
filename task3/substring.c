@@ -82,6 +82,11 @@ int main() {
 	FILE *fp;
 	fp = fopen("output.txt","w");
 
+	if(fp == NULL){
+		printf("%s\n","Unable to open file");
+		exit(1);
+	}
+
 	j = 0;
 	for(j;j<(ilast-ifirst+1);j++){
 		fprintf(fp,"%c",str[ifirst+j]);
